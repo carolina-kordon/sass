@@ -1,0 +1,42 @@
+/**
+cada vez que queremos que usar sass tenemos que hacer la instalación
+
+npm init
+npm install -D node-sass nodemon
+
+van al json
+"build-css": "node-sass --include-path scss ./scss/style.scss ./css/style.css",
+"watch-css": "nodemon -e scss -x \"npm run build-css\""
+ 
+van a la consola de nuevo y ponen
+npm run watch-css
+
+CADA VEZ QUE QUIERAN VOLVER A TRABAJAR SOBRE EL PROYECTO
+LO PRIMERO QUE TENGO QUE HACER ANTES DE ESCRIBIR CÓDIGO ES => npm run watch-css
+*/
+/* segunda instalación
+npm init
+npm install -g sass
+sass --watch rutaSCSS rutaCSS**/
+header{
+    background-color: lightblue;
+    width: 100%;
+    display:flex;
+    h1{
+        width:10%;
+    }
+    nav{
+        width: 90%;
+        ul{
+            display: flex;
+            list-style: none;
+            li{
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+    
