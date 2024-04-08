@@ -19,17 +19,46 @@ LO PRIMERO QUE TENGO QUE HACER ANTES DE ESCRIBIR CÓDIGO ES => npm run watch-css
 npm init
 npm install -g sass
 sass --watch rutaSCSS rutaCSS**/
+/*
+una variable es un espacio de memoria reservada,
+la cual va a alojar un tipo de dato,
+y ese dato en ESTE CASO se puede modificar
+tipo de datos en formato valor; 
+**/
+/*variables**/
+/* mapas
+conjunto de propiedades iguales que podemos
+agrupar dentro de una coleccion
+
+creacion
+
+$nombre(
+    llave1:valor1,
+    llave2:valor2,
+);
+para llamarla ponemos donde iria el valor 
+map-get ($nombre, llave)
+**/
 header {
-  background-color: lightblue;
-  width: 100%;
-  display: flex; }
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; }
   header h1 {
-    width: 10%; }
-  header nav {
-    width: 90%; }
-    header nav ul {
-      display: flex;
-      list-style: none; }
-      header nav ul li a {
-        text-decoration: none;
-        color: black; }
+    font-size: 40px;
+    color: yellow; }
+
+/**corresponde a mi barra de navegacion**/
+.navbar {
+  display: flex;
+  list-style: none;
+  font-size: 24px;
+  gap: 20px; }
+  .navbar li a {
+    text-decoration: none;
+    color: yellow; }
+    .navbar li a:hover {
+      color: #751ed8; }
+
+/**partials**/
