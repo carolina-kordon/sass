@@ -18,65 +18,31 @@ LO PRIMERO QUE TENGO QUE HACER ANTES DE ESCRIBIR CÓDIGO ES => npm run watch-css
 npm init
 npm install -g sass
 sass --watch rutaSCSS rutaCSS**/
-/*
-una variable es un espacio de memoria reservada,
-la cual va a alojar un tipo de dato,
-y ese dato en ESTE CASO se puede modificar
-tipo de datos en formato valor; 
+
+/**partials
+
+base: codigo a nivel general,
+reset y fuentes en caso de que se trabaje de manera general
+
+components: Pueden ir componentes especiales como las cards, navbar, bootstrap
+
+layout: van los partials de nuestros bloques de código más grandes: header main footer y sections tambien
+
+utilities: van los partials de variables mixins, maps y funciones
 **/
-/*variables**/
-$background-color: black;
-$color-fuente: yellow;
+/**siempre tenemos que llamar a los partials de las utilities**/
 
-/* mapas
-conjunto de propiedades iguales que podemos
-agrupar dentro de una coleccion
+@import "./utilities/variables";
+@import "./utilities/mapas";
+@import "./utilities/mixins";
 
-creacion
+/*base*/
+@import "./base/reset";
 
-$nombre(
-    llave1:valor1,
-    llave2:valor2,
-);
-para llamarla ponemos donde iria el valor 
-map-get ($nombre, llave)
-**/
-$colores:(
-    fondo: black,
-    letras: yellow,
-    hover: rgb(117, 30, 216),
-    letrasSecundarias: blue
-);
-$fuentes:(
-    titulos: 40px,
-    titulosSecundarios: 36px,
-);
-header{
-    background-color: map-get($colores, fondo);
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    h1{
-        font-size: 40px;
-        color: map-get($colores, letras);
-    }
-    
-}
-/**corresponde a mi barra de navegacion**/   
-.navbar{
-        display: flex;
-        list-style: none;
-        font-size: 24px;
-        gap: 20px;
-        li{
-            a{
-                text-decoration: none;
-                color: map-get($colores, letras);
-            &:hover{
-                color: map-get($colores, hover);
-            }
-        }
-    }
-}
-/**partials**/
+/**layout**/
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/main-index";
+/**components**/
+@import "./components/cards";
+

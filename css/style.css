@@ -19,6 +19,18 @@ LO PRIMERO QUE TENGO QUE HACER ANTES DE ESCRIBIR CÓDIGO ES => npm run watch-css
 npm init
 npm install -g sass
 sass --watch rutaSCSS rutaCSS**/
+/**partials
+
+base: codigo a nivel general,
+reset y fuentes en caso de que se trabaje de manera general
+
+components: Pueden ir componentes especiales como las cards, navbar, bootstrap
+
+layout: van los partials de nuestros bloques de código más grandes: header main footer y sections tambien
+
+utilities: van los partials de variables mixins, maps y funciones
+**/
+/**siempre tenemos que llamar a los partials de las utilities**/
 /*
 una variable es un espacio de memoria reservada,
 la cual va a alojar un tipo de dato,
@@ -39,15 +51,23 @@ $nombre(
 para llamarla ponemos donde iria el valor 
 map-get ($nombre, llave)
 **/
+/*base*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/**layout**/
 header {
   background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px; }
-  header h1 {
-    font-size: 40px;
-    color: yellow; }
+
+header h1 {
+  font-size: 40px;
+  color: yellow; }
 
 /**corresponde a mi barra de navegacion**/
 .navbar {
@@ -55,10 +75,40 @@ header {
   list-style: none;
   font-size: 24px;
   gap: 20px; }
-  .navbar li a {
-    text-decoration: none;
-    color: yellow; }
-    .navbar li a:hover {
-      color: #751ed8; }
 
-/**partials**/
+.navbar li a {
+  text-decoration: none;
+  color: yellow; }
+
+.navbar li a:hover {
+  color: #751ed8; }
+
+footer {
+  display: flex; }
+  footer div {
+    width: 300px;
+    height: 300px; }
+    footer div:nth-child(1) {
+      background-color: blue; }
+    footer div:nth-child(2) {
+      background-color: red; }
+    footer div:nth-child(3) {
+      background-color: yellow; }
+
+.section-principal {
+  width: 100%;
+  background-color: lightblue;
+  font-size: 20px;
+  padding: 30px; }
+
+/**components**/
+.card {
+  width: 300px;
+  height: 350px; }
+  .card div {
+    width: 100%;
+    height: 50%; }
+    .card div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
