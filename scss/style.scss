@@ -43,6 +43,10 @@ utilities: van los partials de variables mixins, maps y funciones
 @import "./layout/header";
 @import "./layout/footer";
 @import "./layout/main-index";
+
 /**components**/
 @import "./components/cards";
 
+/**mediaQ*/
+@import "./layout/mediasQ/media768";
+@import "./layout/mediasQ/media320";

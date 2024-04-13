@@ -4,3 +4,11 @@
     font-size: 20px;
     padding: 30px;
 }
+.section-dos{
+    @extend .section-principal;
+    background-color: red;
+}
+.section-tres{
+    @extend .section-dos;
+    padding: 15px;
+}
